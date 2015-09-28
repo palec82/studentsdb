@@ -3,17 +3,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-.alert {
-  /* Ми додали відстань лише зверху елемента: -top */
-  margin-top: 10px;
-}
-
 /* знайшли елемент футера по його унікальному ідентифікатору footer*/
 #footer {
   /* задаємо верхню межу елементу: ширина лінії, тип лінії, колір лінії */
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #F5F5F5;
   /* задаємо внутрішню відстань елемента до верхнього краю */
-  padding-top: 10px;
+  padding-top: 15px;
+  background-color: #F5F5F5;
 }
 
 /* Group Selector */
@@ -28,4 +24,25 @@ h1, h2, h3, h4, h5, h6 {
   height: 30px;
   line-height: 30px;
   color: #555555;
+}
+
+/*відстань між рядками container*/
+.row {
+  margin-top: 15px;
+}
+
+/*button submit*/
+.b1 {
+  background: #0000FF;
+  color: #F5F5F5;
+  border: 1px solid #0000FF;
+  border-radius: 5px;
+ }
+
+/*button reset*/
+.b2 {
+  background: #F5F5F5;
+  color: #0000FF;
+  border: 1px solid #F5F5F5;
+  border-radius: 5px;
 }

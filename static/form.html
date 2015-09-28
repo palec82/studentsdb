@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Сервіс Обліку Студентів</title>
+    <meta name="description"
+          value="Система Обліку Студентів Навчального Закладу"/>
+
+    <!-- Include Styles -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mainform.css">
+
+  </head>
+
+  <body>
+
+    <!-- Start Container -->
+    <div class="container">
+
+      <!-- Start Header -->
+      <div class="row" id="header">
+        <div class="col-xs-12">
+          <h1>Форма редагування Студента</h1>
+        </div>
+      </div>
+      <!-- End Header -->
+
+      <!-- Start Main Page -->
+
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Ім'я<sup>*</sup></p>
+        </div>
+        <div class="col-xs-8">
+          <form>
+            <input type="text" id="firstname" value="Віталій"><br>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">По-батькові</p>
+        </div>
+        <div class="col-xs-10">
+          <form>
+            <input type="text" id="fathersname" value="Іванович"><br>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Прізвище<sup>*</sup></p>
+        </div>
+        <div class="col-xs-10">
+          <form>
+            <input type="text" id="secondname" value="Подоба">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">№ Білету<sup>*</sup></p>
+        </div>
+        <div class="col-xs-10">
+          <form>
+            <input type="text" id="number" value="254"
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Дата народження</p>
+        </div>
+        <div class="col-xs-10">
+          <form>
+            <input type="text" value="1984-06-17">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Фото</p>
+        </div>
+        <div class="col-xs-10">
+          <form>
+            <p>Наразі: <a href="./img/Polchyn.jpg">img/Polchyn.jpg </a>
+              <input type="checkbox" name="deleteimg"><br>Очистити</p>
+            <p>Змінити:<input type="file" name="img"></p>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Група<sup>*</sup></p>    
+        </div>
+        <div class="col-xs-10">
+          <select style="width: 180px">
+            <option value="">МтМ-21</option>
+            <option value="">МтМ-22</option>
+            <option value="">МтМ-23</option>  
+          </select>    
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <p align="right">Додаткові Нотатки</p>
+        </div>  
+        <div class="col-xs-10">
+          <form>
+            <textarea cols="20" rows="4">тест d</textarea>
+          </form>  
+        </div>  
+      </div>
+
+      <!-- End Main Page -->
+
+      <!-- Start Footer -->
+
+      <div class="row" id="footer">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-10">
+          <form>
+            <input type="submit" class="b1" name="submit" value="Зберегти">
+            <input type="reset" class="b2" name="reset" value="Скасувати">
+          </form>
+        </div>
+      </div>
+      <!-- End Footer -->
+
+    </div>
+    <!-- End Container -->
+
+
+    <!-- Javascript Section -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  </body>
+
+
+
+</html>
