@@ -40,13 +40,13 @@ def groups_list(request):
     groups = (
         {'id': 1,
          'name': u'МтМ-21',
-         'captain': u'Ячменев Олег'},
+         'captain': {'id': 1, 'name': u'Ячменев Олег'}},
         {'id': 2,
          'name': u'МтМ-22',
-         'captain': u'Подоба Віталій'},
+         'captain': {'id': 2, 'name': u'Подоба Віталій'}},
         {'id': 3,
          'name': u'МтМ-23',
-         'captain': u'Іванов Андрій'},
+         'captain': {'id': 3, 'name': u'Іванов Андрій'}},
     )
     return render(request, 'students/groups_list.html', {'groups': groups})
 
@@ -58,3 +58,8 @@ def groups_edit(request, gid):
 
 def groups_delete(request, gid):
     return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+
+#Views for Journal
+
+def journal(request):
+    return render(request, 'students/journal.html', {})

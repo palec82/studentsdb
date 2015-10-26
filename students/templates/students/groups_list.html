@@ -12,6 +12,7 @@
 <a class="btn btn-primary" href="{% url "groups_add"%}">Додати Групу</a>
 
 <!-- Start Group Listing -->
+{% if groups %}
 <table class="table table-hover table-striped">
   <thead>
     <tr>
@@ -26,7 +27,7 @@
     <tr>
       <td>{{forloop.counter}}</td>
       <td><a href="{% url "groups_edit" group.id %}">{{group.name}}</a></td>
-      <td><a href="{% url "groups_edit" group.id %}">{{group.captain}}</a></td>
+      <td><a href="{% url "students_edit" group.captain.id %}">{{group.captain.name}}</a></td>
       <td>
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle"
@@ -55,6 +56,9 @@
   </tbody>
 </table>
 <!-- End Group Listing -->
+{% else %}
+<p>Поки немає груп у базі</p>
+{% endif %}
 
 <nav>
   <ul class="pagination">
