@@ -1,0 +1,17 @@
+{% load range_filter %}
+
+<nav>
+  <ul class="pagination">
+    {% if active_page > 1 %}
+      <li><a href="#">&laquo;</a></li>
+    {% endif %}
+    {% for page in total_pages|get_range %}
+      {% if active_page == forloop.counter %}
+        <li class="active"><a href="#">{{forloop.counter}}</a></li>
+      {% else %}
+        <li><a href="#">{{forloop.counter}}</a></li>
+      {% endif %}
+    {% endfor %}
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</nav>

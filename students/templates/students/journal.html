@@ -1,237 +1,66 @@
-<!DOCTYPE html>
-<html lang="uk">
+{% extends "students/base.html" %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Сервіс Обліку Студентів</title>
-    <meta name="description"
-          value="Система Обліку Студентів Навчального Закладу"/>
+{% load static from staticfiles %}
 
-    <!-- Include Styles -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/main.css">
+{% load range_filter %}
 
-  </head>
+{% load day_name_filter %}
 
-  <body>
+{% block meta_title %}Відвідування{% endblock meta_title %}
 
-    <!-- Start Container -->
-    <div class="container">
+{% block title %}Облік відвідування{% endblock title %}
 
-      <!-- Start Header -->
-      <div class="row" id="header">
+{% block content %}
+<!-- Current data -->
+<div class="col-xs-12" id="data">
+  <p align="center"><a href="#">&larr;</a><strong>Жовтень 2014</strong><a href="#">&rarr;</a></p>
+</div>
 
-        <!-- Logo -->
-        <div class="col-xs-8">
-          <h1>Сервіс Обліку Студентів</h1>
-        </div>
-
-        <!-- Group Selector -->
-        <div class="col-xs-4" id="group-selector">
-          <strong>Група:</strong>
-          <select>
-            <option value="">Усі Студенти</option>
-            <option value="">МтМ - 21, Подоба Віталій (№ 254)<option>
-            <option value="">МтМ -22, Корост Андрій (№2123)<option>
-          </select>
-        </div>
-      </div>
-      <!-- End Header -->
-
-      <!-- Start SubHeader -->
-      <div class="row" id="sub-header">
-        <div class="col-xs-12">
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation"><a href="#">Студенти</a></li>
-              <li role="presentation" class="active"><a href="#">Відвідування</a></li>
-              <li role="presentation"><a href="#">Групи</a></li>
-            </ul>
-        </div>
-      </div>
-      <!-- End SubHeader -->
-
-      <!-- Start Main Page Content -->
-      <div class="row" id="content-columns">
-
-        <div class="col-xs-12" id="content-column">
-
-          <h2>Облік відвідування</h2>
-
-          <!-- Current data -->
-          <div class="col-xs-12" id="data">
-            <p align="center"><a href="#">&larr;</a><strong>Жовтень 2014</strong><a href="#">&rarr;</a></p>
-          </div>
-
-          <!-- Start Visiting Listing -->
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Студент</th>
-                <th>Ср<p align="center">1</p></th>
-                <th>Чт<p align="center">2</p></th>
-                <th>Пт<p align="center">3</p></th>
-                <th>Сб<p align="center">4</p></th>
-                <th>Нд<p align="center">5</p></th>
-                <th>Пн<p align="center">6</p></th>
-                <th>Вт<p align="center">7</p></th>
-                <th>Ср<p align="center">8</p></th>
-                <th>Чт<p align="center">9</p></th>
-                <th>Пт<p align="center">10</p></th>
-                <th>Сб<p align="center">11</p></th>
-                <th>Нд<p align="center">12</p></th>
-                <th>Пн<p align="center">13</p></th>
-                <th>Вт<p align="center">14</p></th>
-                <th>Ср<p align="center">15</p></th>
-                <th>Чт<p align="center">16</p></th>
-                <th>Пт<p align="center">17</p></th>
-                <th>Сб<p align="center">18</p></th>
-                <th>Нд<p align="center">19</p></th>
-                <th>Пн<p align="center">20</p></th>
-                <th>Вт<p align="center">21</p></th>
-                <th>Ср<p align="center">22</p></th>
-                <th>Чт<p align="center">23</p></th>
-                <th>Пт<p align="center">24</p></th>
-                <th>Сб<p align="center">25</p></th>
-                <th>Нд<p align="center">26</p></th>
-                <th>Пн<p align="center">27</p></th>
-                <th>Вт<p align="center">28</p></th>
-                <th>Ср<p align="center">29</p></th>
-                <th>Чт<p align="center">30</p></th>
-                <th>Пт<p align="center">31</p></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td><a href="#">Подоба Віталій</a></td>
-                <td><input type="checkbox" name="podoba1"></td>
-                <td><input type="checkbox" name="podoba2" checked></td>
-                <td><input type="checkbox" name="podoba3" checked></td>
-                <td><input type="checkbox" name="podoba4"checked></td>
-                <td><input type="checkbox" name="podoba5"checked></td>
-                <td><input type="checkbox" name="podoba6"checked></td>
-                <td><input type="checkbox" name="podoba7"></td>
-                <td><input type="checkbox" name="podoba8" checked></td>
-                <td><input type="checkbox" name="podoba9"></td>
-                <td><input type="checkbox" name="podoba10"></td>
-                <td><input type="checkbox" name="podoba11"></td>
-                <td><input type="checkbox" name="podoba12"></td>
-                <td><input type="checkbox" name="podoba13"></td>
-                <td><input type="checkbox" name="podoba14"></td>
-                <td><input type="checkbox" name="podoba15"></td>
-                <td><input type="checkbox" name="podoba16"></td>
-                <td><input type="checkbox" name="podoba17"></td>
-                <td><input type="checkbox" name="podoba18"></td>
-                <td><input type="checkbox" name="podoba19"></td>
-                <td><input type="checkbox" name="podoba20"></td>
-                <td><input type="checkbox" name="podoba21"></td>
-                <td><input type="checkbox" name="podoba22"></td>
-                <td><input type="checkbox" name="podoba23"></td>
-                <td><input type="checkbox" name="podoba24"></td>
-                <td><input type="checkbox" name="podoba25"></td>
-                <td><input type="checkbox" name="podoba26"></td>
-                <td><input type="checkbox" name="podoba27"></td>
-                <td><input type="checkbox" name="podoba28"></td>
-                <td><input type="checkbox" name="podoba29"></td>
-                <td><input type="checkbox" name="podoba30"></td>
-                <td><input type="checkbox" name="podoba31"></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>2</td>
-                <td><a href="#">Корост Андрій</a></td>
-                <td><input type="checkbox" name="korost1"></td>
-                <td><input type="checkbox" name="korost2"></td>
-                <td><input type="checkbox" name="korost3" checked></td>
-                <td><input type="checkbox" name="korost4" checked></td>
-                <td><input type="checkbox" name="korost5" checked></td>
-                <td><input type="checkbox" name="korost6" checked></td>
-                <td><input type="checkbox" name="korost7"></td>
-                <td><input type="checkbox" name="korost8"></td>
-                <td><input type="checkbox" name="korost9"></td>
-                <td><input type="checkbox" name="korost10" checked></td>
-                <td><input type="checkbox" name="korost11"></td>
-                <td><input type="checkbox" name="korost12"></td>
-                <td><input type="checkbox" name="korost13"></td>
-                <td><input type="checkbox" name="korost14"></td>
-                <td><input type="checkbox" name="korost15"></td>
-                <td><input type="checkbox" name="korost16"></td>
-                <td><input type="checkbox" name="korost17"></td>
-                <td><input type="checkbox" name="korost18"></td>
-                <td><input type="checkbox" name="korost19"></td>
-                <td><input type="checkbox" name="korost20"></td>
-                <td><input type="checkbox" name="korost21"></td>
-                <td><input type="checkbox" name="korost22"></td>
-                <td><input type="checkbox" name="korost23"></td>
-                <td><input type="checkbox" name="korost24"></td>
-                <td><input type="checkbox" name="korost25"></td>
-                <td><input type="checkbox" name="korost26"></td>
-                <td><input type="checkbox" name="korost27"></td>
-                <td><input type="checkbox" name="korost28"></td>
-                <td><input type="checkbox" name="korost29"></td>
-                <td><input type="checkbox" name="korost30"></td>
-                <td><input type="checkbox" name="korost31"></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>3</td>
-                <td><a href="#">Притула Тарас</a></td>
-                <td><input type="checkbox" name="prutyla1"></td>
-                <td><input type="checkbox" name="prutyla2"></td>
-                <td><input type="checkbox" name="prutyla3"></td>
-                <td><input type="checkbox" name="prutyla4" checked></td>
-                <td><input type="checkbox" name="prutyla5" checked></td>
-                <td><input type="checkbox" name="prutyla6"></td>
-                <td><input type="checkbox" name="prutyla7"></td>
-                <td><input type="checkbox" name="prutyla8"></td>
-                <td><input type="checkbox" name="prutyla9" checked></td>
-                <td><input type="checkbox" name="prutyla10"></td>
-                <td><input type="checkbox" name="prutyla11"></td>
-                <td><input type="checkbox" name="prutyla12"></td>
-                <td><input type="checkbox" name="prutyla13"></td>
-                <td><input type="checkbox" name="prutyla14"></td>
-                <td><input type="checkbox" name="prutyla15"></td>
-                <td><input type="checkbox" name="prutyla16"></td>
-                <td><input type="checkbox" name="prutyla17"></td>
-                <td><input type="checkbox" name="prutyla18"></td>
-                <td><input type="checkbox" name="prutyla19"></td>
-                <td><input type="checkbox" name="prutyla20"></td>
-                <td><input type="checkbox" name="prutyla21"></td>
-                <td><input type="checkbox" name="prutyla22"></td>
-                <td><input type="checkbox" name="prutyla23"></td>
-                <td><input type="checkbox" name="prutyla24"></td>
-                <td><input type="checkbox" name="prutyla25"></td>
-                <td><input type="checkbox" name="prutyla26"></td>
-                <td><input type="checkbox" name="prutyla27"></td>
-                <td><input type="checkbox" name="prutyla28"></td>
-                <td><input type="checkbox" name="prutyla29"></td>
-                <td><input type="checkbox" name="prutyla30"></td>
-                <td><input type="checkbox" name="prutyla31"></td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End Visiting Listing -->
-
-          <!--Start Footer -->
-          <div class="row" id="footer">
-            <div class="col-xs-12">
-              &copy; 2015 Сервіс Обліку Студентів
-            </div>
-          </div>
-          <!-- End Footer -->
-
-    </div>
-    <!-- End Container -->
-
-    <!-- Javascript Section -->
-    <scripr src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></scripr>
-
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-  </body>
-
-</html>
+<!-- Start Visiting Listing -->
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th><p align="center">#</p></th>
+      <th><p align="center">Студент</p></th>
+        {% for day in month.total_days|get_range %}
+          <th>{{forloop.counter0|get_day_name:month.start_day}}<p align="center">{{forloop.counter}}</p></th>
+        {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{month.student1.id}}</td>
+      <td><a href="#">{{month.student1.name}}</a></td>
+      {% for day in month.total_days|get_range %}
+        {% if forloop.counter in month.student1.visiting_days %}
+          <td><input type="checkbox" checked></td>
+        {% else %}
+          <td><input type="checkbox"></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>{{month.student2.id}}</td>
+      <td><a href="#">{{month.student2.name}}</a></td>
+      {% for day in month.total_days|get_range %}
+        {% if forloop.counter in month.student2.visiting_days %}
+          <td><input type="checkbox" checked></td>
+        {% else %}
+          <td><input type="checkbox"></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>{{month.student3.id}}</td>
+      <td><a href="#">{{month.student3.name}}</a></td>
+      {% for day in month.total_days|get_range %}
+        {% if forloop.counter in month.student3.visiting_days %}
+          <td><input type="checkbox" checked></td>
+        {% else %}
+          <td><input type="checkbox"></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endblock content %}

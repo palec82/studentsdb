@@ -60,12 +60,6 @@
 <p>Поки немає груп у базі</p>
 {% endif %}
 
-<nav>
-  <ul class="pagination">
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
-</nav>
+{% include "pagination.html" with total_pages=2 active_page=1 %}
 
 {% endblock content %}

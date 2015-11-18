@@ -28,11 +28,14 @@
       <div class="row" id="header">
 
         <!-- Logo -->
+        {% block logo %}
         <div class="col-xs-8">
           <h1>Сервіс Обліку Студентів</h1>
         </div>
+        {% endblock logo %}
 
         <!-- Group Selector -->
+        {% block group_menu %}
         <div class="col-xs-4" id="group-selector">
           <strong>Група:</strong>
           <select>
@@ -41,6 +44,7 @@
             <option value="">МтМ -22, Корост Андрій</option>
           </select>
         </div>
+        {% endblock group_menu %}
       </div>
       <!-- End Header -->
 
@@ -75,11 +79,13 @@
       <!-- End Main Page Content -->
 
       <!--Start Footer -->
+      {% block footer %}
       <div class="row" id="footer">
         <div class="col-xs-12">
           &copy; 2015 Сервіс Обліку Студентів
         </div>
       </div>
+      {% endblock footer %}
       <!-- End Footer -->
 
     </div>
