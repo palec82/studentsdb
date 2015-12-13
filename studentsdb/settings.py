@@ -11,12 +11,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 from django.conf import global_settings
 
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    "django.core.context_processors.request",
-    "studentsdb.context_processors.students_proc",
-)
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -44,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'students', 
+    'students',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,6 +53,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'studentsdb.urls'
+
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ["django.core.context_processors.request",
+                                                                             "studentsdb.context_processors.students_proc",]
 
 TEMPLATES = [
     {
@@ -110,3 +107,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PORTAL_URL = ''
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
