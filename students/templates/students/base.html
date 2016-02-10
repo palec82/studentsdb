@@ -52,9 +52,9 @@
       <div class="row" id="sub-header">
         <div class="col-xs-12">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" {% url 'home' as home_url %}{% ifequal request.path home_url %}class="active"{% endifequal %}><a href="{% url "home" %}">Студенти</a></li>
+              <li role="presentation" {% url 'home' as home_url %}{% ifequal request.path home_url %}class="active"{% endifequal %}><a href="{% url "home" %}?order_by=last_name">Студенти</a></li>
               <li role="presentation" {% url 'journal' as journal_url %}{% ifequal request.path journal_url %}class="active"{% endifequal %}><a href="{% url "journal" %}">Відвідування</a></li>
-              <li role="presentation" {% url 'groups' as groups_url %}{% ifequal request.path groups_url %}class="active"{% endifequal %}><a href="{% url "groups" %}">Групи</a></li>
+              <li role="presentation" {% url 'groups' as groups_url %}{% ifequal request.path groups_url %}class="active"{% endifequal %}><a href="{% url "groups" %}?order_by=title">Групи</a></li>
             </ul>
         </div>
       </div>

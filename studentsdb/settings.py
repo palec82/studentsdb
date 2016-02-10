@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 from django.conf import global_settings
 
+from db import DATABASES
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -54,8 +56,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'studentsdb.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ["django.core.context_processors.request",
-                                                                             "studentsdb.context_processors.students_proc",]
+#TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ["django.core.context_processors.request",
+                                                                            # "studentsdb.context_processors.students_proc",]
 
 TEMPLATES = [
     {
@@ -64,33 +66,22 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+                'studentsdb.context_processors.students_proc',
+
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'studentsdb.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
-    }
-}
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
