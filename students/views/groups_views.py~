@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..models.groups_model import Group
+from ..models import Group
 
 def groups_list(request):
     groups = Group.objects.all()

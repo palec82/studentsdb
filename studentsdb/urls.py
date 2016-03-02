@@ -4,6 +4,7 @@ from .settings import DEBUG
 from students.views import students_views
 from students.views import groups_views
 from students.views import journal_views
+from students.views import exams_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -22,7 +23,13 @@ urlpatterns = [
                        
     # Journal urls
     url(r'^journal/$', journal_views.journal, name='journal'),
-
+    
+    # Exams urls
+    url(r'^exams/$', exams_views.exams_list, name='exams'),
+    url(r'^exams/add/$', exams_views.exams_add, name='exams_add'),
+    url(r'^exams/(?P<gid>\d+)/edit/$', exams_views.exams_edit, name='exams_edit'),
+    url(r'^exams/(?P<gid>\d+)/delete/$', exams_views.exams_delete, name='exams_delete'),
+    
     url(r'^admin/', admin.site.urls),
 ]
 
